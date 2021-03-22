@@ -10,6 +10,7 @@ const useSearch = () => {
   const [rawData, setRawData] = useState<User[]>([])
   const [data, setData] = useState<User[]>([])
   const [searchQuery, setSearchQuery] = useState<string | undefined>(undefined)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     loadLocalResource(rawTxt).then(content => {
@@ -25,11 +26,12 @@ const useSearch = () => {
       }))
       setRawData(users)
       setData(users)
+      setLoading(false)
     })
   }, [])
 
   useEffect(() => {
-    if (searchQuery === undefined) {
+    if (searchQuery === undefined || !rawData.length) {
       return
     }
     if (searchQuery.length === 0) {
@@ -41,7 +43,7 @@ const useSearch = () => {
     })
 
     return setData(validUsers)
-  }, [searchQuery])
+  }, [searchQuery, rawData])
 
   const find = (query: string) => {
     setSearchQuery(query.toLowerCase())
@@ -51,6 +53,7 @@ const useSearch = () => {
     data,
     find,
     searchQuery,
+    loading,
   }
 }
 

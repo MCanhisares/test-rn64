@@ -14,7 +14,7 @@ import { Colors, getColorWithTransparency } from '@resources/Colors'
 
 interface ISearchInputProps {
   style?: StyleProp<ViewStyle>
-  searchTerm?: string
+  initialText?: string
   onTextChange: (text: string) => void
   onSubmitPressed: () => void
 }
@@ -23,7 +23,7 @@ const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity)
 
 export const SearchInput: React.FC<ISearchInputProps> = ({
   style,
-  searchTerm,
+  initialText,
   onTextChange,
   onSubmitPressed,
 }) => {
@@ -49,7 +49,7 @@ export const SearchInput: React.FC<ISearchInputProps> = ({
           underlineColorAndroid={Colors.TRANSPARENT}
           onChange={args => onTextChange(args.nativeEvent.text)}
           placeholder="Search"
-          value={searchTerm}
+          defaultValue={initialText}
           placeholderTextColor={Colors.BLACK}
           style={[styles.text, styles.alignTextLeft]}
           onSubmitEditing={() => onSubmitPressed()}

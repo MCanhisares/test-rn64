@@ -4,15 +4,40 @@ import { RootStackScreenProp } from '@main/navigation/stacks/RootStack'
 import { RootScreens } from '@main/navigation/types'
 import { SearchContext } from '@main/search/contexts/SearchContext'
 import { SearchInput } from '@main/components/SearchInput'
-import React from 'react'
-import { FlatList, Keyboard, StyleSheet, View, ViewStyle } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import {
+  ActivityIndicator,
+  FlatList,
+  Keyboard,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from 'react-native'
 import { Colors } from '@resources/Colors'
 import { useDebouncedSearch } from '@main/search/hooks/useDebouncedSearch'
 
-export const HomeScreen: RootStackScreenProp<RootScreens.Home> = ({}) => {
-  const { data, find } = SearchContext.useContainer()
-
+export const HomeScreen: RootStackScreenProp<RootScreens.Home> = ({
+  route,
+}) => {
+  const { loading, data, find } = SearchContext.useContainer()
   const { debouncedSearchFunction } = useDebouncedSearch(find)
+  const [initialQuery, setInitialQuery] = useState<string | undefined>(
+    undefined
+  )
+  useEffect(() => {
+    if (initialQuery) {
+      debouncedSearchFunction(initialQuery)
+    }
+  }, [initialQuery])
+
+  const query = route.params && route.params.query
+  if (
+    query !== undefined &&
+    query.length > 0 &&
+    (initialQuery === undefined || initialQuery !== query)
+  ) {
+    setInitialQuery(route.params.query)
+  }
 
   const onSubmitPressed = () => {
     Keyboard.dismiss()
@@ -22,9 +47,14 @@ export const HomeScreen: RootStackScreenProp<RootScreens.Home> = ({}) => {
     debouncedSearchFunction(text)
   }
 
+  if (loading) {
+    return <ActivityIndicator style={styles.loading} animating={true} />
+  }
+
   return (
     <ScreenWrapper style={styles.wrapper}>
       <SearchInput
+        initialText={query}
         onSubmitPressed={onSubmitPressed}
         onTextChange={onTextChange}
       />
@@ -45,9 +75,15 @@ export const HomeScreen: RootStackScreenProp<RootScreens.Home> = ({}) => {
 }
 
 const styles = StyleSheet.create({
+  loading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignContent: 'center',
+    backgroundColor: Colors.GREY_B9,
+  } as ViewStyle,
   wrapper: {
     backgroundColor: Colors.GREY_B9,
-  },
+  } as ViewStyle,
   footer: { marginBottom: 20 } as ViewStyle,
   separator: {
     height: 20,

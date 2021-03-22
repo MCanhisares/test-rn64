@@ -6,7 +6,7 @@ import { RootScreens } from '../types'
 import { SearchContext } from '@main/search/contexts/SearchContext'
 
 type RootStackParamsList = {
-  [RootScreens.Home]: undefined
+  [RootScreens.Home]: { query?: string }
 }
 
 export type RootStackScreenProp<
