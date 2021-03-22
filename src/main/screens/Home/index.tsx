@@ -2,7 +2,7 @@ import { ScreenWrapper } from '@common/components/ScreenWrapper'
 import { UserCard } from '@main/components/UserCard'
 import { RootStackScreenProp } from '@main/navigation/stacks/RootStack'
 import { RootScreens } from '@main/navigation/types'
-import { SearchContext } from '@main/search/SearchContext'
+import { SearchContext } from '@main/search/contexts/SearchContext'
 import { SearchInput } from '@main/components/SearchInput'
 import React from 'react'
 import { FlatList, Keyboard, StyleSheet, View, ViewStyle } from 'react-native'
@@ -33,6 +33,9 @@ export const HomeScreen: RootStackScreenProp<RootScreens.Home> = ({}) => {
         data={data}
         renderItem={data => {
           return <UserCard user={data.item} key={data.index} />
+        }}
+        onScroll={() => {
+          Keyboard.dismiss()
         }}
         keyExtractor={item => item.email}
         ItemSeparatorComponent={() => <View style={styles.separator} />}

@@ -45,7 +45,7 @@ const InnerView: React.FC<IScreenWrapperProps> = ({
 
 export const ScreenWrapper: React.FC<IScreenWrapperProps> = ({
   hasSafeArea = true,
-  paddingForStatusBar = false,
+  paddingForStatusBar = true,
   statusBarColor = Colors.GREY_B9,
   safeAreaColor = Colors.GREY_B9,
   ...rest

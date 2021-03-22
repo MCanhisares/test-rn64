@@ -7,8 +7,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "android:clean": "cd android && ./gradlew clean",
     "check-typescript": "tsc",
-    "android:run:dev": "env-cmd env/.dev.env react-native run-android --variant debug --appId com.testappbravado",
-    "android:run:prod": "env-cmd env/.prod.env react-native run-android --variant release",
+    "android:run:dev": "react-native run-android --variant debug --appId com.testappbravado",
+    "android:run:prod": "react-native run-android --variant release --appId com.testappbravado",
     "ios": "react-native run-ios",
     "test": "jest",
     "postinstall": "patch-package"

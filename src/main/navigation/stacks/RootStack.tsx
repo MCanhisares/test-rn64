@@ -3,7 +3,7 @@ import { HomeScreen } from '@main/screens/Home'
 import { StackScreenProps } from '@react-navigation/stack'
 import { createNativeStackNavigator } from 'react-native-screens/native-stack'
 import { RootScreens } from '../types'
-import { SearchContext } from '@main/search/SearchContext'
+import { SearchContext } from '@main/search/contexts/SearchContext'
 
 type RootStackParamsList = {
   [RootScreens.Home]: undefined

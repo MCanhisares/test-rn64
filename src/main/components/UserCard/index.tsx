@@ -3,7 +3,7 @@ import { User } from '@main/search/types/user'
 import { Image, StyleSheet, View, ViewStyle } from 'react-native'
 import { Colors, getColorWithTransparency } from '@resources/Colors'
 import { HighlightableText } from '../HighlightableText'
-import { SearchContext } from '@main/search/SearchContext'
+import { SearchContext } from '@main/search/contexts/SearchContext'
 
 type UserCardProps = {
   user: User

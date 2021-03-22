@@ -12,7 +12,6 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		BBCF48EA45705E4AC438681F /* libPods-testappbravado-testappbravadoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1ED708157EB167169BFD67 /* libPods-testappbravado-testappbravadoTests.a */; };
 		E8B2001726082B5B002B38AA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2001626082B5B002B38AA /* File.swift */; };
 		EA5000153CB502B66B09F159 /* libPods-testappbravado.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 353A79A2E17CE5C1C16F39CC /* libPods-testappbravado.a */; };
 /* End PBXBuildFile section */
@@ -41,11 +40,8 @@
 		45F12FA0E2329A60C64D6EC7 /* Pods-testappbravado.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testappbravado.debug.xcconfig"; path = "Target Support Files/Pods-testappbravado/Pods-testappbravado.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = testappbravado/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		831EC75BECAA81E60FF12336 /* Pods-testappbravado.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testappbravado.release.xcconfig"; path = "Target Support Files/Pods-testappbravado/Pods-testappbravado.release.xcconfig"; sourceTree = "<group>"; };
-		BE5A6CC1E43A36EA9393075C /* Pods-testappbravado-testappbravadoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testappbravado-testappbravadoTests.release.xcconfig"; path = "Target Support Files/Pods-testappbravado-testappbravadoTests/Pods-testappbravado-testappbravadoTests.release.xcconfig"; sourceTree = "<group>"; };
-		DF1ED708157EB167169BFD67 /* libPods-testappbravado-testappbravadoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testappbravado-testappbravadoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B2001626082B5B002B38AA /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FA366C680739F44041F86862 /* Pods-testappbravado-testappbravadoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testappbravado-testappbravadoTests.debug.xcconfig"; path = "Target Support Files/Pods-testappbravado-testappbravadoTests/Pods-testappbravado-testappbravadoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +49,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBCF48EA45705E4AC438681F /* libPods-testappbravado-testappbravadoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +99,6 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				353A79A2E17CE5C1C16F39CC /* libPods-testappbravado.a */,
-				DF1ED708157EB167169BFD67 /* libPods-testappbravado-testappbravadoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,8 +108,6 @@
 			children = (
 				45F12FA0E2329A60C64D6EC7 /* Pods-testappbravado.debug.xcconfig */,
 				831EC75BECAA81E60FF12336 /* Pods-testappbravado.release.xcconfig */,
-				FA366C680739F44041F86862 /* Pods-testappbravado-testappbravadoTests.debug.xcconfig */,
-				BE5A6CC1E43A36EA9393075C /* Pods-testappbravado-testappbravadoTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -158,12 +150,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "testappbravadoTests" */;
 			buildPhases = (
-				7CA2807A16664919BF185338 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				D1BF88ABF1CC48E00F755758 /* [CP] Embed Pods Frameworks */,
-				C2C7E56A19F29C3E732929B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,7 +254,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nif [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n  export SKIP_BUNDLING=true\nfi\n\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "set -e\nif [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n  export SKIP_BUNDLING=true\nfi\n\nif [ \"${CONFIGURATION}\" == \"Release\" ]; then\n  export DEV=false\nfi\n\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		158DE9D8D6C1EAABB0BC476F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -323,62 +312,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7CA2807A16664919BF185338 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-testappbravado-testappbravadoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C2C7E56A19F29C3E732929B0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-testappbravado-testappbravadoTests/Pods-testappbravado-testappbravadoTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-testappbravado-testappbravadoTests/Pods-testappbravado-testappbravadoTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testappbravado-testappbravadoTests/Pods-testappbravado-testappbravadoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D1BF88ABF1CC48E00F755758 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-testappbravado-testappbravadoTests/Pods-testappbravado-testappbravadoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-testappbravado-testappbravadoTests/Pods-testappbravado-testappbravadoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testappbravado-testappbravadoTests/Pods-testappbravado-testappbravadoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,7 +365,6 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA366C680739F44041F86862 /* Pods-testappbravado-testappbravadoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -460,7 +392,6 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE5A6CC1E43A36EA9393075C /* Pods-testappbravado-testappbravadoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
