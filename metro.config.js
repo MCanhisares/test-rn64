@@ -1,13 +1,13 @@
-const {getDefaultConfig} = require('metro-config');
+const { getDefaultConfig } = require('metro-config')
 
 module.exports = (async () => {
   const {
-    resolver: {sourceExts, assetExts},
-  } = await getDefaultConfig();
+    resolver: { sourceExts, assetExts },
+  } = await getDefaultConfig()
 
   const maxWorkersConfig = process.env.CI && {
     maxWorkers: 2,
-  };
+  }
 
   return {
     transformer: {
@@ -18,5 +18,5 @@ module.exports = (async () => {
       sourceExts: [...sourceExts, 'svg'],
     },
     ...maxWorkersConfig,
-  };
-})();
+  }
+})()

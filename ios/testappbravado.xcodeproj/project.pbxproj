@@ -13,6 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		BBCF48EA45705E4AC438681F /* libPods-testappbravado-testappbravadoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1ED708157EB167169BFD67 /* libPods-testappbravado-testappbravadoTests.a */; };
+		E8B2001726082B5B002B38AA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2001626082B5B002B38AA /* File.swift */; };
 		EA5000153CB502B66B09F159 /* libPods-testappbravado.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 353A79A2E17CE5C1C16F39CC /* libPods-testappbravado.a */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		831EC75BECAA81E60FF12336 /* Pods-testappbravado.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testappbravado.release.xcconfig"; path = "Target Support Files/Pods-testappbravado/Pods-testappbravado.release.xcconfig"; sourceTree = "<group>"; };
 		BE5A6CC1E43A36EA9393075C /* Pods-testappbravado-testappbravadoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testappbravado-testappbravadoTests.release.xcconfig"; path = "Target Support Files/Pods-testappbravado-testappbravadoTests/Pods-testappbravado-testappbravadoTests.release.xcconfig"; sourceTree = "<group>"; };
 		DF1ED708157EB167169BFD67 /* libPods-testappbravado-testappbravadoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testappbravado-testappbravadoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8B2001626082B5B002B38AA /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FA366C680739F44041F86862 /* Pods-testappbravado-testappbravadoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testappbravado-testappbravadoTests.debug.xcconfig"; path = "Target Support Files/Pods-testappbravado-testappbravadoTests/Pods-testappbravado-testappbravadoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				E8B2001626082B5B002B38AA /* File.swift */,
 			);
 			name = testappbravado;
 			sourceTree = "<group>";
@@ -114,7 +117,6 @@
 				FA366C680739F44041F86862 /* Pods-testappbravado-testappbravadoTests.debug.xcconfig */,
 				BE5A6CC1E43A36EA9393075C /* Pods-testappbravado-testappbravadoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +210,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -263,7 +265,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "set -e\nif [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n  export SKIP_BUNDLING=true\nfi\n\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		158DE9D8D6C1EAABB0BC476F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -412,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				E8B2001726082B5B002B38AA /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA366C680739F44041F86862 /* Pods-testappbravado-testappbravadoTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BE5A6CC1E43A36EA9393075C /* Pods-testappbravado-testappbravadoTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = testappbravadoTests/Info.plist;
@@ -485,6 +490,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3WZA94Y787;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = testappbravado/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -511,6 +517,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3WZA94Y787;
 				INFOPLIST_FILE = testappbravado/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
